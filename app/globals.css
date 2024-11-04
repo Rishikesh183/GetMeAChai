@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.invertImg{
+  filter: invert(0.23);
+}
