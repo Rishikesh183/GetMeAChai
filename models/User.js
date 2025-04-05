@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
@@ -8,9 +7,11 @@ const UserSchema = new Schema({
     username: { type: String, required: true },
     profilepic: {type: String},
     coverpic: {type: String},
+    razorpayid: { type: String },
+    razorpaysecret: { type: String },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
     });
 
  
-export default mongoose.models && mongoose.models.User ? mongoose.models.User : model("User", UserSchema);
+export default mongoose.models.User || model("User", UserSchema);;
